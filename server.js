@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const bcrpyt = require("bcrypt-nodejs");
 const cors = require('cors');
-const bcrypt = require('bcryptjs');
+//const bcrypt = require('bcryptjs');
 const knex = require('knex');
 
 const register = require('./controllers/register');
@@ -19,7 +19,6 @@ const db = knex({
     database : 'rohjehap'
   }
 });
-
 
 const app = express();
 
