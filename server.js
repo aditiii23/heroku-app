@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const bcrpyt = require("bcrypt-nodejs");
 const cors = require('cors');
-//const bcrypt = require('bcryptjs');
+const bcrypt = require('bcryptjs');
 const knex = require('knex');
 
 const register = require('./controllers/register');
@@ -13,10 +13,12 @@ const image =  require('./controllers/image');
 const db = knex({
   client: 'pg',
   connection: {
-    host : 'ziggy.db.elephantsql.com',
-    user : 'rohjehap',
-    password : 'v0LyXcQC1LDTomafF83zmUGbzETJ_sNv',
-    database : 'rohjehap'
+   // host : 'ziggy.db.elephantsql.com',
+    //user : 'rohjehap',
+    //password : 'v0LyXcQC1LDTomafF83zmUGbzETJ_sNv',
+    //database : 'rohjehap'
+    connectionString : process.env.DATABASE_URL,
+    ssl:true,
   }
 });
 
